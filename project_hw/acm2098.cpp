@@ -22,19 +22,21 @@ Traveling Salesperson Problem
 */
 
 int n = 0;
-int m_cost = 0;
+int m_cost = 1600000000;
 int w[17][17] = { 0 };
 bool check[17] = { false };
 
-void solve(int node, int cost,int count)
+void solve(int node, int cost,int count, int start_node)
 {
     
-    if (count == n)//종료조건 바꾸기 node가 아니라 총 간 노드의 수가 n일때로 교체
+    if (count == n-1)//종료조건 바꾸기 node가 아니라 총 간 노드의 수가 n일때로 교체
     {
-        if (m_cost > cost)
+        int final_cost = cost + w[node][start_node];
+        if (m_cost > final_cost)
         {
-            m_cost = cost;
+            m_cost = final_cost;
         }
+        return;
     }
 
     for (int i = 1; i <= n; i++)
@@ -44,9 +46,9 @@ void solve(int node, int cost,int count)
             continue;
         }
       
-        check[node] = true;
-        solve(i, cost + w[node][i],count + 1);
-        check[node] = false;
+        check[i] = true;
+        solve(i, cost + w[node][i],count + 1,start_node);
+        check[i] = false;
     }
 
 }
@@ -72,7 +74,9 @@ int main()
 
     for (int i = 1; i < n +1; i++)
     {
-        solve(i, 0,0);
+        check[i] = true;
+        solve(i, 0,0,i);
+        check[i] = false;
     }
     cout << m_cost;
 
