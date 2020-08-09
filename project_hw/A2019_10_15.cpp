@@ -35,7 +35,8 @@ int dy[4] = {0, 1, 0, -1};
 int dfs(int x, int y)
 {
 	int apt;
-	apt = 1;
+	apt = 1;    
+
 	V[x][y] = true;
 	
 	for (int i = 0; i < 4; i++)
