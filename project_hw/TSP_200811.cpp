@@ -11,7 +11,7 @@ using namespace std;
 int n = 0;
 int a = 0;
 vector<double> loc[1001];
-int m_dis = 32000;
+double m_dis = 32000;
 bool gate[1001] = { false };
 
 void tsp(int node, double dis, int num, int start_node)
@@ -26,6 +26,7 @@ void tsp(int node, double dis, int num, int start_node)
 		}
 		return;
 	}
+
 
 
 	for (int i = 0; i < n; i++)
@@ -70,7 +71,7 @@ int main()
 		tsp(i, 0, 0, i);
 		gate[i] = false;
 	}
-	cout << m_dis;
+	cout << m_dis << endl;
 
 
 }
