@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <iomanip>
+#include <limits>
 
 using namespace std;
 
@@ -14,20 +16,39 @@ vector<double> loc[1001];
 double m_dis = 32000;
 bool gate[1001] = { false };
 
+
+/*
+
+f(x) = 7x + 8
+y = f(x) + 3
+
+
+double f(double x)
+{
+	return 7 * x + 8;
+}
+
+*/
+
+
 void tsp(int node, double dis, int num, int start_node)
 {
-	if (node == n-1)
+	double best_dis = dis + sqrt(pow(loc[node][0] - loc[start_node][0], 2) +
+		pow(loc[node][1] - loc[start_node][1], 2));
+
+	if (best_dis > m_dis)
 	{
-		double final_dis = dis + sqrt(pow(loc[node][0] - loc[start_node][0], 2) +
-			pow(loc[node][1] - loc[start_node][1], 2));
-		if (m_dis > final_dis)
-		{
-			m_dis = final_dis;
-		}
 		return;
 	}
 
-
+	if (num == n-1)
+	{
+		if (m_dis > best_dis)
+		{
+			m_dis = best_dis;
+		}
+		return ;
+	}
 
 	for (int i = 0; i < n; i++)
 	{
@@ -43,14 +64,6 @@ void tsp(int node, double dis, int num, int start_node)
 		gate[i] = false;
 	}
 }
-
-
-
-
-
-
-
-
 
 int main()
 {
@@ -70,12 +83,11 @@ int main()
 		gate[i] = true;
 		tsp(i, 0, 0, i);
 		gate[i] = false;
+
 	}
-	cout << m_dis << endl;
-
-
+	cout << std::setprecision(std::numeric_limits<double>::digits10 + 1) <<
+		m_dis << endl;
 }
-
 
 
 #endif
