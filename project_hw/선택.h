@@ -30,4 +30,10 @@
 //#define acm1912
 //#define acm1789
 //#define acm2098
-#define TSP_200811
+//#define TSP_200811
+//#define acm2580
+//#define acm17612
+//#define acm17608
+//#define koi_hambuger
+//#define acm14697
+#define semple

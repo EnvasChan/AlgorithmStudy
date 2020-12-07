@@ -30,7 +30,7 @@ int main()
 		int P = 2;
 		for (int i = 0; i <= N; i++)
 		{
-			if (num[i] != 0)
+			//if (num[i] != 0)
 			{
 				P = i;
 				break;

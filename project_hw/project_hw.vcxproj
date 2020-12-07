@@ -129,9 +129,13 @@
     <ClCompile Include="A2019_10_15.cpp" />
     <ClCompile Include="acm11047.cpp" />
     <ClCompile Include="acm11399.cpp" />
+    <ClCompile Include="acm14697.cpp" />
     <ClCompile Include="acm15649.cpp" />
+    <ClCompile Include="acm17608.cpp" />
+    <ClCompile Include="acm17612.cpp" />
     <ClCompile Include="acm1789.cpp" />
     <ClCompile Include="acm1912.cpp" />
+    <ClCompile Include="acm2580.cpp" />
     <ClCompile Include="acm2583.cpp" />
     <ClCompile Include="acm2615.cpp" />
     <ClCompile Include="acm2622.cpp" />
@@ -142,9 +146,12 @@
     <ClCompile Include="bicololring.cpp" />
     <ClCompile Include="bj1377.cpp" />
     <ClCompile Include="knapsack.cpp" />
+    <ClCompile Include="koi_hambuger.cpp" />
     <ClCompile Include="linear_graph.cpp" />
+    <ClCompile Include="semple.cpp" />
     <ClCompile Include="sort_test.cpp" />
     <ClCompile Include="acm2098.cpp" />
+    <ClCompile Include="TSP_200811.cpp" />
     <ClCompile Include="격자길.cpp" />
     <ClCompile Include="나머지.cpp" />
     <ClCompile Include="소스.cpp" />
